@@ -2,7 +2,7 @@ import React from 'react'
 import { Svg } from './styles'
 
 export const Logo = (props) => (
-  <div style={{ backgroundColor: '#DBE2EF', width: '100%' }}>
+  <div style={{ backgroundColor: 'transparent', width: '100%' }}>
     <Svg
       width={387.96}
       height={124.44}

@@ -24,7 +24,7 @@ ul {
 }
 
 body {
-  background: #F9F7F7;
+  background: #EAECF5;
   height: 100vh;
   margin: 0 auto;
   max-width: max(50rem, 90%);

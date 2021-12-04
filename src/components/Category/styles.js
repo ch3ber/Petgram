@@ -11,14 +11,15 @@ export const Anchor = styled.a`
 
 export const Image = styled.img`
 
-  box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.4);
-  -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.4);
-  -moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.4);
+
+  box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.3);
 
    border-radius: 50%;
    overflow: hidden;
    object-fit: cover;
-   height: 7rem;
-   width: 7rem;
+   height: 6rem;
+   width: 6rem;
    margin-bottom: .8rem;
 `

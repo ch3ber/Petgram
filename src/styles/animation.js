@@ -14,3 +14,15 @@ const fadeInKeyframes = keyframes`
 
 export const fadeIn = ({ time = '1s', type = 'ease' } = {}) =>
   css`animation: ${time} ${fadeInKeyframes} ${type};`
+
+const transformMenuKeyframes = keyframes`
+  from {
+    transform: scale(.7) translateY(-5rem);
+  }
+  to {
+    transform: scale(.7) translateY(0);
+  }
+`
+
+export const transformMenu = ({ time = '500ms', type = 'ease-out' } = {}) =>
+  css`animation: ${time} ${transformMenuKeyframes} ${type} forwards`
