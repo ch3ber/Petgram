@@ -3,6 +3,14 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
+:root {
+   --black: #191919;
+   --colorFonts: #191B1C;
+   --bgColor: #D1D5EA;
+   --secondary: #F4F5FA;
+   --white: #ffffff;
+}
+
 html {
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -24,7 +32,8 @@ ul {
 }
 
 body {
-  background: #EAECF5;
+  background: var(--bgColor);
+  color: var(--colorFonts);
   height: 100vh;
   margin: 0 auto;
   max-width: max(50rem, 90%);

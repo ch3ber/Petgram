@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Ul = styled.ul`
-  background-color: #F4F5FA;
+  background-color: var(--secondary);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -16,4 +16,6 @@ export const Ul = styled.ul`
 
   box-shadow: 0px -7px 15px 0px rgba(80,80,80,0.1);
   -webkit-box-shadow: 0px -7px 15px 0px rgba(80,80,80,0.1);
-  -moz-box-shadow: 0px -7px 15px 0px rgba(80,80,80,0.1);`
+  -moz-box-shadow: 0px -7px 15px 0px rgba(80,80,80,0.1);
+
+`

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Svg } from './styles'
+import { LogoContent, Svg } from './styles'
 
 export const Logo = (props) => (
-  <div style={{ backgroundColor: 'transparent', width: '100%' }}>
+  <LogoContent>
     <Svg
       width={387.96}
       height={124.44}
@@ -44,5 +44,5 @@ export const Logo = (props) => (
         />
       </g>
     </Svg>
-  </div>
+  </LogoContent>
 )

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 import { fadeIn } from '../../styles/animation'
 
-export const Wrapper = styled.article`
-  ${fadeIn()}
-
-  background-color: #FFFFFF;
+export const Article = styled.article`
+  min-height: 30rem;
+  background-color: var(--white);
   box-shadow: 0px 7px 15px 0px rgba(30,30,30,0.1);
   -webkit-box-shadow: 0px 7px 15px 0px rgba(30,30,30,0.1);
   -moz-box-shadow: 0px 7px 15px 0px rgba(30,30,30,0.1);
@@ -15,11 +14,13 @@ export const Wrapper = styled.article`
 `
 
 export const ImgWrapper = styled.div`
+  ${fadeIn()}
+  border-radius: 2.5rem;
+  overflow: hidden;
+  margin: .8rem;
 `
 
 export const Img = styled.img`
-  padding: .8rem;
-  border-radius: 2.5rem;
   width: 100%;
 `
 
