@@ -1,32 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { Article, ImgWrapper, Img, Button } from './styles'
-
-import { FiHeart } from 'react-icons/fi'
+import { HiOutlineHeart, HiHeart } from 'react-icons/hi'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { useNearScreen } from '../../hooks/useNearScreen'
 
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
 
 export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
-  const element = useRef(null)
-  const [show, setShow] = useState(false)
-
-  useEffect(function () {
-    Promise.resolve(
-      typeof window.IntersectionObserver !== 'undefined'
-        ? window.IntersectionObserver
-        : import('intersection-observer')
-    ).then(() => {
-      const observer = new window.IntersectionObserver(function (entries) {
-        const { isIntersecting } = entries[0]
-        console.log(entries)
-        if (isIntersecting) {
-          console.log('si')
-          setShow(true)
-          observer.disconnect()
-        }
-      })
-      observer.observe(element.current)
-    })
-  }, [element])
+  const [show, element] = useNearScreen()
+  const key = `like-${id}`
+  const [liked, setLiked] = useLocalStorage(key, false)
+  const Icon = liked ? HiHeart : HiOutlineHeart
 
   return (
     <Article ref={element}>
@@ -39,8 +23,8 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
               </ImgWrapper>
             </a>
 
-            <Button>
-              <FiHeart size='24px' /> {likes} likes
+            <Button onClick={() => setLiked(!liked)}>
+              <Icon size='24px' /> {likes} likes
             </Button>
           </>
       }

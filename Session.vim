@@ -10,8 +10,9 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit ./src/components/PhotoCard/index.js
+edit ./src/index.js
 argglobal
+balt src/App.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -22,14 +23,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 10 - ((9 * winheight(0) + 18) / 36)
+let s:l = 12 - ((11 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 10
-normal! 06|
+keepjumps 12
+normal! 056|
 tabnext 1
-badd +32 ./src/components/PhotoCard/index.js
+badd +12 ./src/index.js
+badd +1 ./src/components/ListOfPhotoCards/index.js
+badd +13 src/App.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -41,6 +44,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

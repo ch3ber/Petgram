@@ -5,10 +5,10 @@ import { Logo } from './components/Logo'
 import { GlobalStyle } from './styles/GlobalStyles'
 
 export const App = () => (
-  <>
+  <div>
     <GlobalStyle />
     <Logo />
     <ListOfCategories />
-    <ListOfPhotoCards />
-  </>
+    <ListOfPhotoCards categoryId={2} />
+  </div>
 )

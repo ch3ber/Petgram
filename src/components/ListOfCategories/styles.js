@@ -9,22 +9,23 @@ export const List = styled.ul`
   padding-bottom: 3.5rem;
   margin: 0;
   margin-top: -3.8rem;
+
   ${props => props.fixed && css`
-    &.fixed {
-     position: fixed;
-     top: 0;
-     z-index: 1;
-     padding: 1.5rem;
-     padding-top: 3rem;
-     border-radius: 0 0 4rem 4rem;
-     background-color: var(--bgColor);
-     box-shadow: 0px 7px 15px 0px rgba(80,80,80,0.1);
-     -webkit-box-shadow: 0px 7px 15px 0px rgba(80,80,80,0.1);
-     -moz-box-shadow: 0px 7px 15px 0px rgba(80,80,80,0.1);
-     opacity: .9;
-     ${transformMenu()}
-    }
-  `}
+  {
+      margin: 0;
+      position: fixed;
+      top: -20px;
+      z-index: 9;
+      padding: 1.5rem;
+      border-radius: 0 0 4rem 4rem;
+      background-color: var(--bgColor);
+      box-shadow: 0px 7px 15px 0px rgba(80, 80, 80, 0.1);
+      -webkit-box-shadow: 0px 7px 15px 0px rgba(80, 80, 80, 0.1);
+      -moz-box-shadow: 0px 7px 15px 0px rgba(80, 80, 80, 0.1);
+      opacity: 0.9;
+      ${transformMenu()}
+    }`
+  }
 `
 
 // F4F5FA
