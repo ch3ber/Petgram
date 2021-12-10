@@ -21,6 +21,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "react-router-dom": "^6.1.0",
     "styled-components": "^5.3.3"
   },
   "standard": {
@@ -38,7 +39,7 @@
     "build": "webpack",
     "lint": "standard",
     "lint-fix": "standard --fix",
-    "dev": "webpack-dev-server --mode development",
+    "dev": "webpack-dev-server --mode development --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
