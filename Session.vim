@@ -12,7 +12,7 @@ argglobal
 %argdel
 edit ./src/App.js
 argglobal
-balt src/pages/Home.js
+balt src/pages/NoRegisteredUser.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -23,18 +23,17 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 20 - ((19 * winheight(0) + 18) / 36)
+let s:l = 15 - ((9 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 20
-normal! 027|
+keepjumps 15
+normal! 0
 tabnext 1
-badd +11 src/pages/Home.js
-badd +22 ./src/App.js
-badd +43 ./src/components/ListOfCategories/index.js
-badd +10 ./src/index.js
-badd +8 ./src/components/Category/index.js
+badd +12 ./src/App.js
+badd +1 src/pages/Favs.js
+badd +3 src/pages/User.js
+badd +4 src/pages/NoRegisteredUser.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

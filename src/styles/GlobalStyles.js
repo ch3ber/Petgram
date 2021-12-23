@@ -4,11 +4,12 @@ export const GlobalStyle = createGlobalStyle`
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 :root {
-   --black: #191919;
+   --black: #1c1c1c;
    --colorFonts: #191B1C;
    --bgColor: #D1D5EA;
    --secondary: #F4F5FA;
    --white: #ffffff;
+   --bgNavBar: #fcfcfc;
 }
 
 html {
