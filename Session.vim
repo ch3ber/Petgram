@@ -10,9 +10,9 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit ./src/App.js
+edit src/pages/NoRegisteredUser.js
 argglobal
-balt src/pages/NoRegisteredUser.js
+balt src/App.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -23,17 +23,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((9 * winheight(0) + 18) / 36)
+let s:l = 16 - ((15 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
+keepjumps 16
 normal! 0
+lcd ~/workspace/Petgram
 tabnext 1
-badd +12 ./src/App.js
-badd +1 src/pages/Favs.js
-badd +3 src/pages/User.js
-badd +4 src/pages/NoRegisteredUser.js
+badd +12 ~/workspace/Petgram/src/App.js
+badd +16 ~/workspace/Petgram/src/pages/NoRegisteredUser.js
+badd +22 ~/workspace/Petgram/src/components/UserForm/index.js
+badd +3 ~/workspace/Petgram/src/hooks/useInputValue.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -45,6 +46,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
