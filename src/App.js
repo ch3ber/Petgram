@@ -17,9 +17,7 @@ function useAuth () {
 
 function RequireAuth ({ children, isAuth }) {
   // const { authed } = useAuth()
-  return isAuth === true
-    ? children
-    : <NoRegisteredUser />
+  return isAuth === true ? children : <NoRegisteredUser />
 }
 
 export const App = () => {
@@ -33,18 +31,20 @@ export const App = () => {
         <Route exact path='/detail/:detailId' element={<Detail />} />
       </Routes>
       <Context.Consumer>
-        {
-           ({ isAuth }) =>
-             isAuth
-               ? <Routes>
-                 <Route exact path='/favs' element={<Favs />} />
-                 <Route exact path='/user' element={<User />} />
-               </Routes>
-               : <Routes>
-                 <Route exact path='/favs' element={<NoRegisteredUser />} />
-                 <Route exact path='/user' element={<NoRegisteredUser />} />
-               </Routes>
-        }
+        {({ isAuth }) =>
+          isAuth
+            ? (
+              <Routes>
+                <Route exact path='/favs' element={<Favs />} />
+                <Route exact path='/user' element={<User />} />
+              </Routes>
+              )
+            : (
+              <Routes>
+                <Route exact path='/favs' element={<NoRegisteredUser />} />
+                <Route exact path='/user' element={<NoRegisteredUser />} />
+              </Routes>
+              )}
       </Context.Consumer>
       <NavBar />
     </BrowserRouter>

@@ -10,9 +10,9 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit src/pages/NoRegisteredUser.js
+edit src/index.js
 argglobal
-balt src/App.js
+balt src/components/PhotoCard/index.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -23,18 +23,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 16 - ((15 * winheight(0) + 18) / 36)
+let s:l = 34 - ((20 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
-normal! 0
-lcd ~/workspace/Petgram
+keepjumps 34
+normal! 023|
 tabnext 1
-badd +12 ~/workspace/Petgram/src/App.js
-badd +16 ~/workspace/Petgram/src/pages/NoRegisteredUser.js
-badd +22 ~/workspace/Petgram/src/components/UserForm/index.js
-badd +3 ~/workspace/Petgram/src/hooks/useInputValue.js
+badd +5 src/components/PhotoCard/index.js
+badd +34 src/index.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

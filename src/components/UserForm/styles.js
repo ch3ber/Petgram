@@ -11,6 +11,9 @@ export const Form = styled.form`
   max-width: 70%;
   justify-content: space-between;
   align-items: center;
+  &[disabled] {
+    opacity: 0.3;
+  }
 `
 
 export const Input = styled.input`
@@ -19,7 +22,7 @@ export const Input = styled.input`
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-color: #fff;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   padding: 1rem;
   width: 100%;
 `
@@ -33,4 +36,9 @@ export const Button = styled.button`
   margin-top: 2rem;
   padding: 1rem;
   width: 100%;
+`
+
+export const Error = styled.span`
+  font-size: 1.4rem;
+  color: #f00;
 `
