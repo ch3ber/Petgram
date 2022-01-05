@@ -27,17 +27,6 @@ export const Input = styled.input`
   width: 100%;
 `
 
-export const Button = styled.button`
-  border: none;
-  color: #555;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  background-color: #a8dadc;
-  margin-top: 2rem;
-  padding: 1rem;
-  width: 100%;
-`
-
 export const Error = styled.span`
   font-size: 1.4rem;
   color: #f00;
