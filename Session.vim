@@ -10,8 +10,9 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit src/App.js
+edit webpack.config.production.js
 argglobal
+balt webpack.config.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -22,15 +23,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 41 - ((27 * winheight(0) + 18) / 36)
+let s:l = 29 - ((24 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 41
-normal! 0
+keepjumps 29
+normal! 024|
 lcd ~/workspace/Petgram
 tabnext 1
+badd +0 ~/workspace/Petgram/webpack.config.production.js
+badd +14 ~/workspace/Petgram/webpack.config.js
 badd +41 ~/workspace/Petgram/src/App.js
+badd +18 ~/workspace/Petgram/src/components/FavButton/index.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

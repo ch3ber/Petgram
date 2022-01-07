@@ -2,6 +2,7 @@ import React, { useContext, Suspense } from 'react'
 import { Logo } from './components/Logo'
 import { Home } from './pages/Home'
 import { GlobalStyle } from './styles/GlobalStyles'
+import { Normalize } from './styles/normalize'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Detail } from './pages/Detail'
 import { NavBar } from './components/NavBar'
@@ -9,6 +10,7 @@ import { User } from './pages/User'
 import { NoRegisteredUser } from './pages/NoRegisteredUser'
 import { NotFound } from './pages/NotFound'
 import { Context } from './Context'
+import { Register } from './pages/Register'
 
 const Favs = React.lazy(() => import('./pages/Favs'))
 
@@ -17,6 +19,7 @@ export const App = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <BrowserRouter>
+        <Normalize />
         <GlobalStyle />
         <Logo />
         <Routes>
@@ -39,6 +42,11 @@ export const App = () => {
             element={
               !isAuth ? <NoRegisteredUser /> : <Navigate replace to='/' />
             }
+          />
+          <Route
+            exact
+            path='/register'
+            element={!isAuth ? <Register /> : <Navigate replace to='/' />}
           />
           <Route path='*' element={<NotFound />} />
         </Routes>

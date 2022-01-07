@@ -1,25 +1,40 @@
 import styled from 'styled-components'
 import { fadeIn } from '../../styles/animation'
+import { colors } from '../../styles/darkTheme'
 
 export const Article = styled.article`
-  min-height: 30rem;
-  background-color: var(--white);
-  box-shadow: 0px 7px 15px 0px rgba(30,30,30,0.1);
-  -webkit-box-shadow: 0px 7px 15px 0px rgba(30,30,30,0.1);
-  -moz-box-shadow: 0px 7px 15px 0px rgba(30,30,30,0.1);
-  border-radius: 2.5rem;
-  margin: 0 1rem;
-  width: calc(100% - 3rem);
+  background-color: ${colors.backgroundLigth};
+  border-radius: 1rem;
+  width: calc(100% - 2.5rem);
   overflow: hidden;
 `
 
 export const ImgWrapper = styled.div`
-  ${fadeIn()}
-  border-radius: 2.5rem;
   overflow: hidden;
-  margin: .8rem;
+  ${fadeIn()}
 `
 
 export const Img = styled.img`
   width: 100%;
+`
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1.5rem;
+  gap: 2rem;
+`
+
+export const UserImg = styled.img`
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+`
+
+export const Name = styled.h2`
+  margin: 0;
+  font-size: 2rem;
+  color: ${colors.backgroundVeryLight};
 `

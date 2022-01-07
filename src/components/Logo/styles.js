@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 export const LogoContent = styled.div`
-    background-color: 'transparent';
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: 'transparent';
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const Svg = styled.svg`
